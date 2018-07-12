@@ -8,7 +8,7 @@
 
 ## Использование
 
-    git clone git@github.com:bevice/stm32_hal_template.git new_project
+    git clone --depth 1 git@github.com:bevice/stm32_hal_template.git new_project
     cd new_project 
     git submodule init
     git submodule update
@@ -18,7 +18,7 @@
 Или скриптом:
     
     #!/bin/bash
-    git clone git@github.com:bevice/stm32_hal_template.git $1
+    git clone --depth 1 git@github.com:bevice/stm32_hal_template.git $1
     cd $1
     git remote remove origin
     sed -i '' -e   "s/stm32_hal_template/$1/g" CMakeLists.txt

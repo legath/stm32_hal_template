@@ -59,7 +59,7 @@ endif()
 
 # Флаги компиляторов, тут можно подкрутить
 SET(CMAKE_C_FLAGS "-isystem ${TOOLCHAIN_INC_DIR} -mthumb-interwork -mcpu=cortex-m3 -mthumb -fno-builtin -Wall  -ffunction-sections -fdata-sections -mfloat-abi=soft -std=gnu99 ${EXTRA_FLAGS_SEMIHOSTING}" CACHE INTERNAL "c compiler flags")
-SET(CMAKE_CXX_FLAGS "-isystem ${TOOLCHAIN_INC_DIR} -mthumb-interwork -mcpu=cortex-m3 -mthumb  -fno-builtin -Wall " CACHE INTERNAL "cxx compiler flags")
+SET(CMAKE_CXX_FLAGS "-isystem ${TOOLCHAIN_INC_DIR} -mthumb-interwork -mcpu=cortex-m3 -mthumb  -fno-builtin -Wall -ffunction-sections -fdata-sections -std=c++11" CACHE INTERNAL "cxx compiler flags")
 SET(CMAKE_EXE_LINKER_FLAGS " -nostdlib -nodefaultlibs -nostartfiles -Wl,-Map -Wl,main.map -mthumb-interwork -mcpu=cortex-m3 -Wl,--gc-sections" CACHE INTERNAL "exe link flags")
 SET(CMAKE_MODULE_LINKER_FLAGS "-L${TOOLCHAIN_LIB_DIR}" CACHE INTERNAL "module link flags")
 SET(CMAKE_SHARED_LINKER_FLAGS "-L${TOOLCHAIN_LIB_DIR}" CACHE INTERNAL "shared lnk flags")
